@@ -12,9 +12,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-		"postCreateCommand": [
-		    "sudo apt install -y nodejs npm"
-		]
+		"postCreateCommand": "sudo apt install -y nodejs npm"
+		
 	// Configure tool-specific properties.
 	// "customizations": {},
 

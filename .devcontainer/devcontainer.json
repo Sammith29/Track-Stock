@@ -4,7 +4,8 @@
 	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-
+   
+	
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
@@ -16,7 +17,15 @@
 		"/bin/bash -c 'sudo apt update'",
 		"/bin/bash -c 'sudo apt install openjdk-17-jdk'",
 		"/bin/bash -c 'sudo apt install -y nodejs npm'"
-	]
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"george-alisson.html-preview-vscode",
+				"ecmel.vscode-html-css"
+			]
+		}
+	}
 		
 	// Configure tool-specific properties.
 	// "customizations": {},

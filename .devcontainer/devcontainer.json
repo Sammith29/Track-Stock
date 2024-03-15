@@ -3,7 +3,7 @@
 {
 	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:jammy"
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -12,12 +12,12 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-    "postCreateCommand": [
-		   "sudo apt update",
-		   "sudo apt install -y openjdk-17-jdk",
-		   "sudo apt install -y nodejs npm"
-	]
+    
+		"postCreateCommand": [
+			"sudo apt update",
+			"sudo apt install -y openjdk-17-jdk",
+			"sudo apt install -y nodejs npm"
+		]
 	// Configure tool-specific properties.
 	// "customizations": {},
 

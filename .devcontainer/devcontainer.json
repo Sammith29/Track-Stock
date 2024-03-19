@@ -22,7 +22,9 @@
 		"vscode": {
 			"extensions": [
 				"george-alisson.html-preview-vscode",
-				"ecmel.vscode-html-css"
+				"ecmel.vscode-html-css",
+				"ms-vscode.live-server",
+				"esbenp.prettier-vscode"
 			]
 		}
 	}

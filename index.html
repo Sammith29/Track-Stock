@@ -1,15 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track-Stock</Track-Stock></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-wIeJEBxkhPMqS0aO+Tvn/XhCsTUbC5Omqab1IGvuqoP5buPqGXLnsA5Qhxtqqlbs" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-theme.min.css" integrity="sha384-IDz9afq7W8HJGX3z89iJ9N46tFuqE9FzYigqfxvDZzGztOuqOXRbi/aRL6o" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track-Stock</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: white;
+    }
+    #signup{
+      background-color: transparent;
+      border: none;
+      color: blue;
+    }
+  </style>
 </head>
 <body>
-   
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div id= "card" class="card">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+<script src=""></script>
+<script>
+  signUp();
+  function signUp(){
+    const signup = document.getElementById('card');
+    signup.innerHTML = ``;
+    if (signup) { // Check if the element exists before using it
+      // Clear existing content (if any)
+      signup.innerHTML = ``;
+
+      // Create and append the new content
+      const design = document.createElement("div");
+      design.innerHTML = `<div class="card-header">
+                <h4 class="align-middle">Sign up </h4>
+              </div>
+              <div class="card-body">
+                <form id="signup">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                  </div><br>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                  </div><br>
+                  <div class="form-group">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="Confirmpassword" placeholder="Confirm Enter password">
+                  </div><br>
+                  <button id="signin" type="submit" class="btn btn-primary" >Sign Up</button>
+                   <br><br>
+                  </form>
+                  <h6>Account Exist Click to <button onclick="signin()" id="signup">Signin</button></h6>
+              </div>`;
+      signup.appendChild(design);
+      const form = document.getElementById('signup');
+      form.addEventListener('submit', validationForm);
+    }
+     else {
+      console.error("Element with ID 'card' not found!");
+     }
+  }
+  function signin() {
+    const signin = document.getElementById('card');
+    if (signin) { // Check if the element exists before using it
+      // Clear existing content (if any)
+      signin.innerHTML = "";
+
+      // Create and append the new content
+      const design = document.createElement("div");
+      design.innerHTML = `<div class="card-header">
+                <h4 class="align-middle">Sign in</h4>
+              </div>
+              <div class="card-body">
+                <form id="signin">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                  </div><br>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                  </div><br>
+                  <button type="submit" class="btn btn-primary" >Sign In </button>
+                      <br><br>
+                     
+                  </form>
+                  <h6>Create an Account Click to <button onclick="signUp()" id="signup">Signup</button></h6>
+              </div>`;
+      signin.appendChild(design);
+      const form = document.getElementById('signin');
+      form.addEventListener('submit', validationForm);
+    }
+     else {
+      console.error("Element with ID 'card' not found!");
+    }
+  }
+  function welcomeback(){
+    const welcome= document.getElementById('card');
+    if (welcome) { // Check if the element exists before using it
+      // Clear existing content (if any)
+      welcome.innerHTML = "";
+
+      // Create and append the new content
+      var design = document.createElement("div");
+      design.innerHTML = `<div class="card-header">
+        <h4 class="align-middle">Welcome Back Username</h4>`;
+           welcome.appendChild(design);
+      }
+      else {
+      console.error("Element with ID 'card' not found!");
+    }
+  }
+  function validationForm(){
+    event.preventDefault();
+    console.log("function called validate");
+  const username = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+   
+  if (username.length < 4 || password.length < 6) {
+        alert("Username must be at least 3 characters and password must be at least 6 characters.");
+        return false;
+      }
+      welcomeback();
+      window.location.href="./Home.html";
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </html>

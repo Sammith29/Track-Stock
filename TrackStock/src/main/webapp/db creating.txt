@@ -1,0 +1,6 @@
+CREATE database TrackStock;
+USE Database TrackStock;
+CREATE TABLE StockDetails (StockID INT AUTO_INCREMENT PRIMARY KEY,  ProductName VARCHAR(255) NOT NULL,Category VARCHAR(100) NOT NULL,   QRCode VARCHAR(50) NOT NULL,   Price VARCHAR(50),  Quantity INT,  SupplierID INT NOT NULL, Status ENUM('active', 'inactive') NOT NULL);
+
+
+
